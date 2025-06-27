@@ -1,17 +1,136 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
+
+<head>
     <meta charset="UTF-8">
-    <titile>ポケモン図鑑</titile>
+    <title>ポケモン図鑑</title>
     <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
-        <header>
-            
-        </header>
-        <main>
-            <div id="pokemonList" class="pokemon-list"></div>
-        </main>
-    </body>
+</head>
+
+<body>
+    <header class="list-nav-wrapper wrap2">
+        <div class="list-nav-aline">
+            <a href="./index.html" class="list-logo">
+                <img src="./img/logo.png" alt="ロゴ">
+            </a><!-- end logo -->
+
+            <ul class="list-nav">
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./list.html">LIST</a></li>
+                <li><a href="https://www.youtube.com/user/PokemonCoJp" target="_blank"><i
+                            class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="https://x.com/Pokemon_cojp" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/pokemon_jpn/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://page.line.me/pokemon?openQrModal=true" target="_blank"><i
+                            class="fa-brands fa-line"></i></a></li>
+                <li><a href="https://www.tiktok.com/@pokemon?is_from_webapp=1&sender_device=pc" target="_blank"><i
+                            class="fa-brands fa-tiktok"></i></a></li>
+            </ul><!-- end list-nav -->
+
+            <div class="inner-search list-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div><!-- end inner-search -->
+        </div>
+    </header>
+    <main>
+        <div class="list-title">
+            <h1 class="dotgothic16-regular">151ずかん</h1>
+            <hr>
+        </div><!-- end list-title -->
+
+        <details>
+            <summary>タイプごとに表示<span class="toggle_button"><i class="fa-solid fa-chevron-down"></i></span></summary>
+            <div class="filter-wrapper">
+                <ul class="filter">
+                    <li data-filter="normal" data-filter2="normal">
+                        <img src="./img/●ノーマル.png" alt="ノーマルタイプアイコン">
+                        <p>ノーマル</p>
+                    </li>
+                    <li data-filter="honoo" data-filter2="honoo">
+                        <img src="./img/●ほのお.png" alt="ほのおタイプアイコン">
+                        <p>ほのお</p>
+                    </li>
+                    <li data-filter="mizu" data-filter2="mizu">
+                        <img src="./img/●みず.png" alt="みずタイプアイコン">
+                        <p>みず</p>
+                    </li>
+                    <li data-filter="kusa" data-filter2="kusa">
+                        <img src="./img/●くさ.png" alt="くさタイプアイコン">
+                        <p>くさ</p>
+                    </li>
+                    <li data-filter="denki" data-filter2="denki">
+                        <img src="./img/●でんき.png" alt="でんきタイプアイコン">
+                        <p>でんき</p>
+                    </li>
+                    <li data-filter="koori" data-filter2="koori">
+                        <img src="./img/●こおり.png" alt="こおりタイプアイコン">
+                        <p>こおり</p>
+                    </li>
+                    <li data-filter="kakutou" data-filter2="kakutou">
+                        <img src="./img/●かくとう.png" alt="かくとうタイプアイコン">
+                        <p>かくとう</p>
+                    </li>
+                    <li data-filter="doku" data-filter2="doku">
+                        <img src="./img/●どく.png" alt="どくタイプアイコン">
+                        <p>どく</p>
+                    </li>
+                    <li data-filter="jimen" data-filter2="jimen">
+                        <img src="./img/●じめん.png" alt="じめんタイプアイコン">
+                        <p>じめん</p>
+                    </li>
+                </ul>
+
+                <ul class="filter">
+                    <li data-filter="hikou" data-filter2="hikou">
+                        <img src="./img/●ひこう.png" alt="ひこうタイプアイコン">
+                        <p>ひこう</p>
+                    </li>
+                    <li data-filter="esupa" data-filter2="esupa">
+                        <img src="./img/●エスパー.png" alt="エスパータイプアイコン">
+                        <p>エスパー</p>
+                    </li>
+                    <li data-filter="musi" data-filter2="musi">
+                        <img src="./img/●むし.png" alt="むしタイプアイコン">
+                        <p>むし</p>
+                    </li>
+                    <li data-filter="iwa" data-filter2="iwa">
+                        <img src="./img/●いわ.png" alt="いわタイプアイコン">
+                        <p>いわ</p>
+                    </li>
+                    <li data-filter="gost" data-filter2="gost">
+                        <img src="./img/●ゴースト.png" alt="ゴーストタイプアイコン">
+                        <p>ゴースト</p>
+                    </li>
+                    <li data-filter="doragon" data-filter2="doragon">
+                        <img src="./img/●ドラゴン.png" alt="ドラゴンタイプアイコン">
+                        <p>ドラゴン</p>
+                    </li>
+                    <li data-filter="aku" data-filter2="aku">
+                        <img src="./img/●あく.png" alt="あくタイプアイコン">
+                        <p>あく</p>
+                    </li>
+                    <li data-filter="hagane" data-filter2="hagane">
+                        <img src="./img/●はがね.png" alt="はがねタイプアイコン">
+                        <p>はがね</p>
+                    </li>
+                    <li data-filter="feary" data-filter2="feary">
+                        <img src="./img/●フェアリー.png" alt="フェアリータイプアイコン">
+                        <p>フェアリー</p>
+                    </li>
+                </ul><!-- end fillter -->
+
+                <ul class="filter filter-all">
+                    <li data-filter="all" class=" li-all li-all">
+                        <p>リセット</p>
+                    </li>
+                </ul>
+            </div><!-- end filter-wrapper -->
+        </details>
+
+        <div id="pokemonList" class="pokemon-list"></div>
+
+    </main>
+</body>
 
 </html>
