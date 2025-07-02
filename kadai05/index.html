@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
+
+<head>
     <meta charset="UTF-8">
     <title>ポケモン図鑑</title>
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
     <!--font-awesomeの読み込み-->
     <link href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <img src="./img/logo.png" alt="ロゴ">
+</head>
 
-            <!-- ハンバーガーメニューアイコン -->
-            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
-            <!-- メニュー本体 -->
-            <nav id="menu" class="menu">
-                <ul>
-                    <li>ホーム</li>
-                    <li>図鑑一覧</li>
-                </ul>
-            </nav>
-        </header><!-- end header -->
-        <main>
+<body>
+    <header>
+        <div class="logo-img">
+            <img src="./img/logo.png" alt="ロゴ">
+        </div>
+
+        <!-- ハンバーガーメニューアイコン -->
+        <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+        <!-- メニュー本体 -->
+        <nav id="menu" class="menu">
+            <ul>
+                <li>ホーム</li>
+                <li>図鑑一覧</li>
+            </ul>
+        </nav>
+    </header><!-- end header -->
+    <main>
+        <div class="center">
             <div class="title">
                 <p>ポケットモンスター</p>
                 <h2>151ずかん</h2>
@@ -30,16 +35,19 @@
 
             <!-- 検索窓 -->
             <form id="searchForm" action="/" method="get">
-                <input type="text" id="searchInput" name="query" placeholder="ポケモンの名前で検索">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" name="query" placeholder="ポケモンの名前で検索">
+                </div>
             </form><!-- end form -->
 
             <!-- ランダムに表示される箱 -->
             <div id="random"></div>
-            
-        </main><!-- end main -->
+        </div><!-- end center -->
+    </main><!-- end main -->
 
-        <!-- JavaScript読み込み -->
-        <script src="./JS/script.js"></script>
-    </body>
+    <!-- JavaScript読み込み -->
+    <script src="./JS/script.js"></script>
+</body>
 
 </html>
