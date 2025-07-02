@@ -2,13 +2,25 @@
 <html lang="ja">
     <head>
     <meta charset="UTF-8">
-    <titile>ポケモン図鑑</titile>
+    <title>ポケモン図鑑</title>
     <link rel="stylesheet" href="./css/style.css">
+    <!--font-awesomeの読み込み-->
+    <link href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" rel="stylesheet">
     </head>
     <body>
         <header>
-            
-        </header>
+            <img src="./img/logo.png" alt="ロゴ">
+
+            <!-- ハンバーガーメニューアイコン -->
+            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+            <!-- メニュー本体 -->
+            <nav id="menu" class="menu">
+                <ul>
+                    <li>ホーム</li>
+                    <li>図鑑一覧</li>
+                </ul>
+            </nav>
+        </header><!-- end header -->
         <main>
             <div class="title">
                 <p>ポケットモンスター</p>
@@ -18,8 +30,10 @@
             <!-- 検索窓 -->
             <form id="searchForm" action="/" method="get">
                 <input type="text" id="searchInput" name="query" placeholder="ポケモンの名前で検索">
-            </form>
-            <!-- end 検索窓 -->
+            </form><!-- end form -->
+
+            <!-- ランダムに表示される箱 -->
+            <div id="random"></div>
             
         </main><!-- end main -->
     </body>
