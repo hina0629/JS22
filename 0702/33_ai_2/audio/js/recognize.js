@@ -190,7 +190,7 @@ async function app() {
     await recognizer.ensureModelLoaded();
 
     // TODO: 単語ラベル取得: recognizer.wordLabels()
-    const words = {};
+    const words = recognizer.wordLabels();
     console.log(words);
     // 単語ラベル表示
     displayWordList(words);
