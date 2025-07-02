@@ -150,7 +150,7 @@ function updateInputLevel() {
     const level = Math.min(100, rms * 100 * 2);
 
     // TODO: プログレスバー更新
-    progressBar.value = 0;
+    progressBar.value = level;
 
     // フレーム更新
     requestAnimationFrame(updateInputLevel);
