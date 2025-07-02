@@ -61,11 +61,11 @@ function drawHand(keypoints) {
             const x = pt.x * canvas.width / video.videoWidth;
             const y = pt.y * canvas.height / video.videoHeight;
             // TODO: 最初の点はmoveTo、それ以外はlineTo
-            // if (i === 0) {
-            //     ctx.moveTo(x, y);
-            // } else {
-            //     ctx.lineTo(x, y);
-            // }
+            if (i === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
         });
         ctx.strokeStyle = 'cyan';
         ctx.lineWidth = 2;
@@ -74,12 +74,12 @@ function drawHand(keypoints) {
 
     // TODO: 関節点
     keypoints.forEach(point => {
-        // const x = point.x * canvas.width / video.videoWidth;
-        // const y = point.y * canvas.height / video.videoHeight;
-        // ctx.beginPath();
-        // ctx.arc(x, y, 3, 0, 2 * Math.PI);
-        // ctx.fillStyle = 'red';
-        // ctx.fill();
+        const x = point.x * canvas.width / video.videoWidth;
+        const y = point.y * canvas.height / video.videoHeight;
+        ctx.beginPath();
+        ctx.arc(x, y, 3, 0, 2 * Math.PI);
+        ctx.fillStyle = 'red';
+        ctx.fill();
     });
 }
 
