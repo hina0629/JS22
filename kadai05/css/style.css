@@ -66,5 +66,5 @@ img {
 
 /* メニューの表示 */
 .menu.active { 
-    display: flex;
+    display: block;
 }
