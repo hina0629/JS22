@@ -1,9 +1,7 @@
 /* ハンバーガーメニュー */
-function toggleMenu() {
-    const menu = document.getElementById("menu");
-    /* activeクラスを付け外し */
-    menu.classList.toggle("active");
-}
+document.getElementById("menu-toggle").addEventListener("click", function () {
+    document.getElementById("side-menu").classList.toggle("open");
+});
 
 /* 検索窓Enterを押して検索 */
 document.getElementById("searchInput").addEventListener("keydown", function(event) {

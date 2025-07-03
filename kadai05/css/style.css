@@ -55,33 +55,44 @@ img {
 }
 
 /* -------------------- header -------------------- */
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
 
 /* ロゴ画像 */
 .logo-img {
-    margin: 20px;
+    margin: 10px 20px;
 }
 
 .logo-img img {
-    width: 150px;
+    width: 120px;
 }
 
 /* ハンバーガーアイコン */
-.hamburger {
-    font-size: 30px;
-    cursor: pointer;
-    padding: 10px;
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 /* メニューの初期状態 */
-.menu {
-    display: none;
-    background-color: brown;
-    padding: 10px;
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: aquamarine;
+    transition: left 0.3s ease;
+    padding: 20px;
 }
 
 /* メニューの表示 */
-.menu.active {
-    display: block;
+.side-menu.open {
+    right: 0;
+    z-index: 2000;
 }
 
 /* -------------------- main -------------------- */
@@ -89,10 +100,25 @@ img {
     text-align: center;
 }
 
+/* ----- タイトル ----- */
+.title {
+    margin-bottom: 50px;
+}
+
+.title p {
+    font-size: 45px;
+}
+
+.title h2 {
+    font-weight: normal;
+    font-size: 100px;
+    line-height: 100px;
+}
+
 /* ----- 検索窓 ----- */
 .search-box {
     position: relative;
-    width: 600px;
+    width: 700px;
     margin: 0 auto;
 }
 
@@ -111,8 +137,8 @@ img {
     border-radius: 50px;
 }
 
-/* ↓ で検索窓を選択したときに枠の色を変更できる */
-/* #searchInput:focus {
-    border: 2px solid いろ;
+/* 検索窓を選択したときに枠の色を変 */
+#searchInput:focus {
+    border: 2px solid red;
     outline: none;
-} */
+}

@@ -15,26 +15,28 @@
 </head>
 
 <body>
-    <header>
+    <header class="header-wrapper">
         <div class="logo-img">
             <img src="./img/logo.png" alt="ロゴ">
         </div>
 
         <!-- ハンバーガーメニューアイコン -->
-        <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+        <button id="menu-toggle" class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
         <!-- メニュー本体 -->
-        <nav id="menu" class="menu">
+        <nav id="side-menu" class="side-menu">
             <ul>
                 <li>ホーム</li>
                 <li>図鑑一覧</li>
             </ul>
         </nav>
-    </header><!-- end header -->
+    </header><!-- end header-wrapper -->
     <main>
         <div class="center">
             <div class="title dotgothic16-regular">
                 <p>ポケットモンスター</p>
-                <h2>151ずかん</h2>
+                <h2>１５１ずかん</h2>
             </div>
 
             <!-- 検索窓 -->
