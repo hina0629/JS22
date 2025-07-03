@@ -105,6 +105,10 @@ img {
     margin: 20px;
 }
 
+.menu-toggle i {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 .nav-flex {
     display: flex;
 }
@@ -115,6 +119,7 @@ img {
 
 .cursol{
     color: white;
+    transition: 0.2s;
 }
 
 .nav-flex ul li:hover .cursol {
@@ -172,4 +177,14 @@ img {
 #searchInput:focus {
     border: 2px solid red;
     outline: none;
+}
+
+/* ランダム表示 */
+.random img {
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: solid 3px #C2C2C2;
+    border-radius: 70px;
+    margin-top: 50px;
+    padding: 20px;
 }
