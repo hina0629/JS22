@@ -54,6 +54,15 @@ img {
     font-style: normal;
 }
 
+/* -------------------- body -------------------- */
+.body-wrapper {
+    background-image: url(../img/pokebackground.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 /* -------------------- header -------------------- */
 .header-wrapper {
     display: flex;
@@ -75,24 +84,46 @@ img {
     top: 20px;
     right: 20px;
     z-index: 1000;
+    background: transparent;
+    border: none;
+    font-size: 35px;
 }
 
 /* メニューの初期状態 */
 .side-menu {
     position: fixed;
-    top: 0;
-    right: -250px;
+    top: 50px;
+    right: -270px;
     width: 250px;
-    height: 100%;
-    background-color: aquamarine;
-    transition: left 0.3s ease;
+    height: 50%;
+    background-color: white;
+    border: double 5px #7A7A7A;
+    box-shadow: 3px 3px black;
+    border-radius: 20px;
+    transition: right 0.3s ease-in-out;
     padding: 20px;
+    margin: 20px;
+}
+
+.nav-flex {
+    display: flex;
+}
+
+.nav-flex ul li {
+    font-size: 25px;
+}
+
+.cursol{
+    color: white;
+}
+
+.nav-flex ul li:hover .cursol {
+    color: black;
 }
 
 /* メニューの表示 */
 .side-menu.open {
     right: 0;
-    z-index: 2000;
 }
 
 /* -------------------- main -------------------- */
@@ -102,7 +133,7 @@ img {
 
 /* ----- タイトル ----- */
 .title {
-    margin-bottom: 50px;
+    margin: -20px 0 60px 0;
 }
 
 .title p {
@@ -118,7 +149,7 @@ img {
 /* ----- 検索窓 ----- */
 .search-box {
     position: relative;
-    width: 700px;
+    width: 800px;
     margin: 0 auto;
 }
 
