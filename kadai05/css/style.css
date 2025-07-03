@@ -47,6 +47,12 @@ img {
 
 /* --------------------------------------------------------------------------- */
 
+/* -------------------- googleフォント -------------------- */
+.dotgothic16-regular {
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 /* -------------------- header -------------------- */
 
@@ -74,7 +80,7 @@ img {
 }
 
 /* メニューの表示 */
-.menu.active { 
+.menu.active {
     display: block;
 }
 
