@@ -2,10 +2,10 @@
 let chart;
 
 const label = "Votes";
-// X軸のデータ
+// ラベル：X軸のデータ
 const labels = ['Red', 'Blue', 'Yellow'];
 // const labels = [1, 2, 3];
-// Y軸のデータ
+// データ：Y軸のデータ
 const values = [12, 19, 3];
 const colors = [
     'rgba(255, 99, 132, 0.6)',
@@ -24,11 +24,11 @@ function renderChart() {
     const ctx = document.getElementById('barChart').getContext('2d');
     // Chart.jsのインスタンスを作成
     chart = new Chart(ctx, {
-        // TODO: グラフの種類を指定
-        type: '',
+        // TODO: グラフの種類を指定（棒グラフ ＝ bar）
+        type: 'bar',
         data: {
             // TODO: X軸のデータ: labels
-            labels: [],
+            labels: labels, // ['Red', 'Blue', 'Yellow']
             datasets: [{
                 // TODO: データセットのラベル: label
                 label: '',
