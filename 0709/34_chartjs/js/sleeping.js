@@ -18,8 +18,10 @@ async function createLineChart() {
         type: 'line',
         data: {
             // TODO: ラベルを設定（x軸の値）
+            labels: labels,
             // TODO: データセット（y軸の値）
             datasets: [{
+                data: data,
             }]
         },
         // オプション
@@ -41,8 +43,8 @@ async function createLineChart() {
                 // TODO: X軸のタイトル
                 x: {
                     title: {
-                        // display: true,
-                        // text: '睡眠時間（時間）',
+                        display: true,
+                        text: '睡眠時間（時間）',
                     },
                     ticks: {
                         stepSize: 1
@@ -51,8 +53,8 @@ async function createLineChart() {
                 // TODO: Y軸のタイトル
                 y: {
                     title: {
-                        // display: true,
-                        // text: '生産性（1〜10）',
+                        display: true,
+                        text: '生産性（1〜10）',
                     },
                     min: 0,
                     max: 10,
