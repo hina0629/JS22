@@ -33,7 +33,7 @@ function renderChart() {
                 // TODO: データセットのラベル: label
                 label: '',
                 // TODO: Y軸のデータ: data
-                data: [],
+                data: values, // [12, 19, 3]
                 // TODO: 塗りつぶしの色: backgroundColor
                 backgroundColor: [],
                 // TODO: 枠線の色: borderColor
