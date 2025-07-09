@@ -173,10 +173,19 @@ img {
     border-radius: 50px;
 }
 
-/* 検索窓を選択したときに枠の色を変 */
+/* 検索窓を選択したときに枠の色を変える */
 #searchInput:focus {
     border: 2px solid rgb(244, 89, 89);
     outline: none;
+}
+
+.list-search {
+    width: 280px;
+    margin: 0 auto;
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* ランダム表示 */
@@ -198,4 +207,10 @@ img {
 .random img:hover {
     transform: scale(1.1);
     transition: 0.25s;
+}
+
+/* -------------------- list.html -------------------- */
+.list-title h2{
+    font-size: 80px;
+    font-weight: normal;
 }
