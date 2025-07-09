@@ -32,15 +32,18 @@ document.getElementById("searchInput").addEventListener("keydown", function(even
 /* ランダム表示 */
 const random = document.getElementById("random");
 
-function createPokemonCard(paddedNumber) {
-    return `
-    <img src="./img/${paddedNumber}.png" alt="">
-    `
-}
-
 for (let i = 0; i < 5; i++) {
     let No = Math.floor(Math.random() * 151) + 1;
     /* ゼロパディング */
     const paddedNumber = String(No).padStart(3, '0');
-    random.innerHTML = createPokemonCard(paddedNumber);
+
+    const pokemonCard = document.createElement('div');
+    pokemonCard.classList.add('pokemon-card');
+
+    const pokemonImage = document.createElement('img');
+    pokemonImage.src = `./img/${paddedNumber}.png`;
+    pokemonImage.alt = `ポケモンNo.${paddedNumber}`;
+
+    pokemonCard.appendChild(pokemonImage);
+    random.appendChild(pokemonCard);
 }
