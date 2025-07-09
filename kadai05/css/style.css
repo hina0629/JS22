@@ -119,6 +119,10 @@ img {
     font-size: 25px;
 }
 
+.nav-flex ul li a {
+    color: black;
+}
+
 .cursol{
     color: white;
     transition: 0.2s;
@@ -209,6 +213,15 @@ img {
 .random img:hover {
     transform: scale(1.1);
     transition: 0.25s;
+}
+
+/* 一覧ボタン */
+.list-button {
+    font-size: 30px;
+    border: 2px solid #7A7A7A;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 20px;
 }
 
 /* --------------------------------------------------------------------------------------------- */
