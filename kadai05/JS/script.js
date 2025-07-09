@@ -43,6 +43,16 @@ for (let i = 0; i < 5; i++) {
     const pokemonImage = document.createElement('img');
     pokemonImage.src = `./img/${paddedNumber}.png`;
     pokemonImage.alt = `ポケモンNo.${paddedNumber}`;
+    
+    // マウスオーバーでGIFに変更
+    pokemonImage.addEventListener("mouseover", function () {
+        pokemonImage.src = `./img/${paddedNumber}gif.png`;
+    });
+
+    // 元の画像に戻す
+    pokemonImage.addEventListener("mouseout", function () {
+        pokemonImage.src = `./img/${paddedNumber}.png`;
+    });
 
     pokemonCard.appendChild(pokemonImage);
     random.appendChild(pokemonCard);

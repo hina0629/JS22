@@ -95,7 +95,7 @@ img {
     top: 50px;
     right: -270px;
     width: 250px;
-    height: 50%;
+    height: 45%;
     background-color: white;
     border: double 5px #7A7A7A;
     box-shadow: 3px 3px black;
@@ -193,4 +193,9 @@ img {
     border: solid 3px #C2C2C2;
     border-radius: 70px;
     margin-top: 50px;
+}
+
+.random img:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
 }
