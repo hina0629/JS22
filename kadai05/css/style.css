@@ -175,7 +175,7 @@ img {
 
 /* 検索窓を選択したときに枠の色を変 */
 #searchInput:focus {
-    border: 2px solid red;
+    border: 2px solid rgb(244, 89, 89);
     outline: none;
 }
 
@@ -197,5 +197,5 @@ img {
 
 .random img:hover {
     transform: scale(1.1);
-    transition: 0.2s;
+    transition: 0.25s;
 }
