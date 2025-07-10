@@ -32,7 +32,7 @@ document.getElementById("searchInput").addEventListener("keydown", function(even
 /* ランダム表示 */
 const random = document.getElementById("random");
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 6; i++) {
     let No = Math.floor(Math.random() * 151) + 1;
     /* ゼロパディング */
     const paddedNumber = String(No).padStart(3, '0');
