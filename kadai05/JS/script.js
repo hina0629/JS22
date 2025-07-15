@@ -56,4 +56,4 @@ for (let i = 0; i < 6; i++) {
 
     pokemonCard.appendChild(pokemonImage);
     random.appendChild(pokemonCard);
-}
+};

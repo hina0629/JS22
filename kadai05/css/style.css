@@ -67,17 +67,16 @@ img {
 
 /* -------------------- header -------------------- */
 .header-wrapper {
-    display: flex;
-    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 /* ロゴ画像 */
-.logo-img {
-    margin: 10px 20px;
-}
-
 .logo-img img {
     width: 120px;
+    margin: 10px 20px;
 }
 
 /* ハンバーガーアイコン */
@@ -174,9 +173,11 @@ img {
 
 .search-box input {
     width: 100%;
+    height: 50px;
     padding: 10px 10px 10px 45px;
     border: 2px solid #7A7A7A;
     border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* 検索窓を選択したときに枠の色を変える */
@@ -185,20 +186,11 @@ img {
     outline: none;
 }
 
-.list-search {
-    width: 280px;
-    margin: 0 auto;
-    position: fixed;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 /* ランダム表示 */
 .random {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 200px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(150px, 1fr));
+    padding: 0 10%;
 }
 
 .random img {
@@ -221,26 +213,43 @@ img {
     font-size: 20px;
     border: 2px solid #7A7A7A;
     width: 250px;
-    border-radius: 20px;
+    border-radius: 50px;
     bottom: 55px;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
-}
-
-.list-button a {
+    padding: 10px 0;
     color: black;
 }
 
-.list-button:hover {
-    background-color: #dadada;
+.list-button:hover{
+    background-color: #D03A3A;
     color: white;
+    border: 2px solid white;
     transition: 0.2s;
 }
 
 /* --------------------------------------------------------------------------------------------- */
 /*                                           list.html                                           */
 /* --------------------------------------------------------------------------------------------- */
+
+.list-header-wrapper {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-bottom: 10px;
+}
+
+.list-search {
+    width: 280px;
+    margin: 0 auto;
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.list-search input {
+    height: 40px;
+}
 
 .list-title h2{
     font-size: 80px;
@@ -251,4 +260,37 @@ img {
     width: 700px;
     height: 2px;
     background-color: black;
+}
+
+.pokemon-list {
+    display: grid;
+    margin: 100px auto;
+    padding: 0 80px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    row-gap: 3em;
+}
+
+.pokemon-list-card img {
+    width: 130px;
+    background-color: #EDEEF1;
+    border-radius: 40px;
+    /* padding: 0.7rem; */
+}
+
+.pokemon-list-card img:hover {
+    position: relative;
+    left: 0;
+    bottom: 5px;
+}
+
+/* -------------------- footer -------------------- */
+.footer-wrapper {
+    background-color: #D03A3A;
+    height: 15vh;
+}
+
+.footer-content {
+    text-align: center;
+    line-height: 15vh;
+    font-weight: bold;
 }

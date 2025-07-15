@@ -17,10 +17,10 @@
 </head>
 
 <body>
-    <header class="header-wrapper">
-        <div class="logo-img">
+    <header class="header-wrapper list-header-wrapper">
+        <a href="./index.html" class="logo-img">
             <img src="./img/logo.png" alt="ロゴ">
-        </div>
+        </a>
 
         <!-- 検索窓 -->
         <form id="searchForm" action="/" method="get">
@@ -46,16 +46,26 @@
     </header><!-- end header-wrapper -->
     <main>
         <div class="center">
+            <!-- タイトル -->
             <div class="list-title dotgothic16-regular">
                 <h2>１５１ずかん</h2>
                 <hr>
-            </div>
+            </div><!-- end タイトル -->
 
+            <!-- ポケモン一覧 -->
+            <div class="pokemon-list" id="pokemonList"></div>
 
         </div><!-- end center -->
     </main><!-- end main -->
 
+    <footer class="footer-wrapper">
+        <div class="footer-content dotgothic16-regular">
+            <p>&copy; ポケモン図鑑</p>
+        </div>
+    </footer><!-- end footer-wrapper -->
+
     <!-- JavaScript読み込み -->
+    <script src="./JS/list.js"></script>
     <script src="./JS/script.js"></script>
 </body><!-- end body-wraper -->
 
