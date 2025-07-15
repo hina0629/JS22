@@ -23,6 +23,19 @@ for (let i = 1; i <= 151; i++) {
         pokemonListImage.src = `./img/${listPaddedNumber}.png`;
     });
 
+    
+    // 日本語名の取得
+    fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}`)
+    .then(response => response.json())
+    .then(data => {
+    const japaneseName = data.names.find(name => name.language.name === 'ja');
+    const name = japaneseName ? japaneseName.name : '名前不明';
+
+    const nameElement = document.createElement('p');
+    nameElement.textContent = `${name}`;
+    pokemonListCard.appendChild(nameElement);
+    });
+
     pokemonListCard.appendChild(pokemonListImage);
     pokemonList.appendChild(pokemonListCard);
 }
