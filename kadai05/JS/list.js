@@ -110,3 +110,16 @@ clearButton.addEventListener('click', function () {
 loadAllPokemon();
 
 // 検索
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        const keyword = event.target.value.trim().toLowerCase();
+        const filtered = allPokemonData.filter(pokemon => 
+            pokemon.name.toLowerCase().includes(keyword));
+        displayPokemon(filtered);
+        buttons.forEach(button => {
+            button.classList.remove('select-button');
+        });
+    }
+});
