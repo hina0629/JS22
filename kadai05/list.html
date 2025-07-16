@@ -16,54 +16,97 @@
         rel="stylesheet">
 </head>
 
-<body>
-    <header class="header-wrapper list-header-wrapper">
-        <a href="./index.html" class="logo-img">
-            <img src="./img/logo.png" alt="ロゴ">
-        </a>
+<body id="list-top">
+    <div class="wrap">
+        <div class="bg"></div>
+    </div>
 
-        <!-- 検索窓 -->
-        <form id="searchForm" action="/" method="get">
-            <div class="search-box list-search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="searchInput" name="query" placeholder="ポケモンの名前で検索">
+    <div class="wrap2">
+        <header class="header-wrapper list-header-wrapper">
+            <a href="./index.html" class="logo-img">
+                <img src="./img/logo.png" alt="ロゴ">
+            </a>
+
+            <!-- 検索窓 -->
+            <form id="searchForm" action="/" method="get">
+                <div class="search-box list-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" name="query" placeholder="ポケモンの名前で検索">
+                </div>
+            </form><!-- end form -->
+
+            <!-- ハンバーガーメニューアイコン -->
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- メニュー本体 -->
+            <nav id="side-menu" class="side-menu dotgothic16-regular">
+                <div class="nav-flex">
+                    <ul class="main-nav">
+                        <li><a href="./index.html"><span class="cursol">▶ </span>ホーム</a></li>
+                        <li><a href="./list.html"><span class="cursol">▶ </span>図鑑一覧</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header><!-- end header-wrapper -->
+        <main>
+            <div class="center">
+                <!-- タイトル -->
+                <div class="list-title dotgothic16-regular">
+                    <h2>１５１ずかん</h2>
+                    <hr>
+                </div><!-- end タイトル -->
+
+                <!-- タイプ -->
+                <div id="typeButtons" class="type-buttons button-reset">
+                    <button data-type="normal" id="normal">ノーマル</button>
+                    <button data-type="fire" id="fire">ほのお</button>
+                    <button data-type="water" id="water">みず</button>
+                    <button data-type="grass" id="grass">くさ</button>
+                    <button data-type="electric" id="electric">でんき</button>
+                    <button data-type="ice" id="ice">こおり</button>
+                    <button data-type="fighting" id="fighting">かくとう</button>
+                    <button data-type="poison" id="poison">どく</button>
+                    <button data-type="ground" id="ground">じめん</button>
+                    <br>
+                    <button data-type="flying" id="flying">ひこう</button>
+                    <button data-type="psychic" id="psychic">エスパー</button>
+                    <button data-type="bug" id="bug">むし</button>
+                    <button data-type="rock" id="rock">いわ</button>
+                    <button data-type="ghost" id="ghost">ゴースト</button>
+                    <button data-type="dragon" id="dragon">ドラゴン</button>
+                    <button data-type="dark" id="dark">あく</button>
+                    <button data-type="steel" id="steel">はがね</button>
+                    <button data-type="fairy" id="fairy">フェアリー</button>
+                </div>
+
+                <!-- クリアボタン -->
+                <div id="clearButton" class="clear-button button-reset">
+                    <button>絞り込みクリア</button>
+                </div>
+
+                <!-- ポケモン一覧 -->
+                <div class="pokemon-list" id="pokemonList"></div>
+
+            </div><!-- end center -->
+        </main><!-- end main -->
+
+        <footer class="footer-wrapper">
+            <!-- 上に戻るボタン -->
+            <a href="#list-top">
+                <div class="list-top-btn">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </div><!-- end list-top-btn -->
+            </a>
+
+            <div class="footer-wrapper">
+                <div class="footer-content dotgothic16-regular">
+                    <p>&copy; ポケモン図鑑</p>
+                </div>
             </div>
-        </form><!-- end form -->
+        </footer><!-- end フッター -->
 
-        <!-- ハンバーガーメニューアイコン -->
-        <button id="menu-toggle" class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <!-- メニュー本体 -->
-        <nav id="side-menu" class="side-menu dotgothic16-regular">
-            <div class="nav-flex">
-                <ul class="main-nav">
-                    <li><a href="./index.html"><span class="cursol">▶ </span>ホーム</a></li>
-                    <li><a href="./list.html"><span class="cursol">▶ </span>図鑑一覧</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header><!-- end header-wrapper -->
-    <main>
-        <div class="center">
-            <!-- タイトル -->
-            <div class="list-title dotgothic16-regular">
-                <h2>１５１ずかん</h2>
-                <hr>
-            </div><!-- end タイトル -->
-
-            <!-- ポケモン一覧 -->
-            <div class="pokemon-list" id="pokemonList"></div>
-
-        </div><!-- end center -->
-    </main><!-- end main -->
-
-    <footer class="footer-wrapper">
-        <div class="footer-content dotgothic16-regular">
-            <p>&copy; ポケモン図鑑</p>
-        </div>
-    </footer><!-- end footer-wrapper -->
-
+    </div>
     <!-- JavaScript読み込み -->
     <script src="./JS/list.js"></script>
     <script src="./JS/script.js"></script>

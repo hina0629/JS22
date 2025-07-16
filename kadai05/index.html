@@ -17,47 +17,53 @@
 </head>
 
 <body class="body-wrapper">
-    <header class="header-wrapper">
-        <a href="" class="logo-img">
-            <img src="./img/logo.png" alt="ロゴ">
-        </a>
+    <div class="wrap">
+        <div class="bg"></div>
+    </div>
 
-        <!-- ハンバーガーメニューアイコン -->
-        <button id="menu-toggle" class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <!-- メニュー本体 -->
-        <nav id="side-menu" class="side-menu dotgothic16-regular">
-            <div class="nav-flex">
-                <ul class="main-nav">
-                    <li><a href="./index.html"><span class="cursol">▶ </span>ホーム</a></li>
-                    <li><a href="./list.html"><span class="cursol">▶ </span>図鑑一覧</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header><!-- end header-wrapper -->
-    <main>
-        <div class="center">
-            <div class="title dotgothic16-regular">
-                <p>ポケットモンスター</p>
-                <h2>１５１ずかん</h2>
-            </div>
+    <div class="wrap2">
+        <header class="header-wrapper">
+            <a href="" class="logo-img">
+                <img src="./img/logo.png" alt="ロゴ">
+            </a>
 
-            <!-- 検索窓 -->
-            <form id="searchForm" action="/" method="get">
-                <div class="search-box">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" id="searchInput" name="query" placeholder="ポケモンの名前で検索">
+            <!-- ハンバーガーメニューアイコン -->
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- メニュー本体 -->
+            <nav id="side-menu" class="side-menu dotgothic16-regular">
+                <div class="nav-flex">
+                    <ul class="main-nav">
+                        <li><a href="./index.html"><span class="cursol">▶ </span>ホーム</a></li>
+                        <li><a href="./list.html"><span class="cursol">▶ </span>図鑑一覧</a></li>
+                    </ul>
                 </div>
-            </form><!-- end form -->
+            </nav>
+        </header><!-- end header-wrapper -->
+        <main>
+            <div class="center">
+                <div class="title dotgothic16-regular">
+                    <p>ポケットモンスター</p>
+                    <h2>１５１ずかん</h2>
+                </div>
 
-            <!-- ランダムに表示される箱 -->
-            <div id="random" class="random"></div>
+                <!-- 検索窓 -->
+                <form id="searchForm" action="/" method="get">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="searchInput" name="query" placeholder="ポケモンの名前で検索">
+                    </div>
+                </form><!-- end form -->
 
-            <a href="./list.html" class="list-button dotgothic16-regular">図鑑一覧</a>
+                <!-- ランダムに表示される箱 -->
+                <div id="random" class="random"></div>
 
-        </div><!-- end center -->
-    </main><!-- end main -->
+                <a href="./list.html" class="list-button dotgothic16-regular">図鑑一覧</a>
+
+            </div><!-- end center -->
+        </main><!-- end main -->
+    </div>
 
     <!-- JavaScript読み込み -->
     <script src="./JS/script.js"></script>
