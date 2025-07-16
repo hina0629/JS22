@@ -33,6 +33,7 @@ for (let i = 1; i <= 151; i++) {
 
     const nameElement = document.createElement('p');
     nameElement.textContent = `${name}`;
+    nameElement.classList.add('dotgothic16-regular');
     pokemonListCard.appendChild(nameElement);
     });
 
