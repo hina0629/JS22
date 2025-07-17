@@ -106,9 +106,6 @@ clearButton.addEventListener('click', function () {
     });
 });
 
-// 初期ロード
-loadAllPokemon();
-
 // 検索
 const searchInput = document.getElementById("searchInput");
 searchInput.addEventListener("keydown", function(event) {
@@ -123,3 +120,18 @@ searchInput.addEventListener("keydown", function(event) {
         });
     }
 });
+
+const params = new URLSearchParams(window.location.search);
+const keyword = params.get("search");
+
+if (keyword) {
+    const filtered = allPokemonData.filter(pokemon => 
+        pokemon.name.toLowerCase().includes(keyword));
+    displayPokemon(filtered);
+    buttons.forEach(button => {
+            button.classList.remove('select-button');
+    });
+}
+
+// 初期ロード
+loadAllPokemon();
