@@ -8,6 +8,29 @@ const footer = document.querySelector('.footer-wrapper');
 
 const buttons = typeButtons.querySelectorAll('button');
 
+// タイプ日本語版
+const typeMapping = {
+    normal: "ノーマル",
+    fire: "ほのお",
+    water: "みず",
+    electric: "でんき",
+    grass: "くさ",
+    ice: "こおり",
+    fighting: "かくとう",
+    poison: "どく",
+    ground: "じめん",
+    flying: "ひこう",
+    psychic: "エスパー",
+    bug: "むし",
+    rock: "いわ",
+    ghost: "ゴースト",
+    dragon: "ドラゴン",
+    dark: "あく",
+    steel: "はがね",
+    fairy: "フェアリー"
+};
+
+
 // ポケモンのデータを取得
 async function fetchPokemonData(id) {
     const speciesRes = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
@@ -27,7 +50,21 @@ async function loadAllPokemon() {
         const data = await fetchPokemonData(i);
         allPokemonData.push(data);
     }
-    displayPokemon(allPokemonData);
+    
+    // index.htmlからの検索
+    const params = new URLSearchParams(window.location.search);
+    const keyword = params.get("search");
+
+    if (keyword) {
+        const filtered = allPokemonData.filter(pokemon => 
+            pokemon.name.toLowerCase().includes(keyword));
+        displayPokemon(filtered);
+        buttons.forEach(button => {
+                button.classList.remove('select-button');
+        });
+    } else {
+        displayPokemon(allPokemonData);
+    }
 }
 
 function displayPokemon(pokemonArray) {
@@ -76,8 +113,19 @@ function displayPokemon(pokemonArray) {
         card.appendChild(img);
         card.appendChild(nameElement);
         pokemonList.appendChild(card);
+
+        // モーダルウィンドウ
+        card.addEventListener('click', async () => {
+            const description = await fetchPokemonDescription(pokemon.id);
+            const name = pokemon.name;
+            const types = pokemon.types;
+            showPokemonModal(name, description, types, listPaddedNumber);
+        });
     });
 }
+
+// 初期ロード
+loadAllPokemon();
 
 // タイプボタン
 typeButtons.addEventListener('click', function (event) {
@@ -121,17 +169,27 @@ searchInput.addEventListener("keydown", function(event) {
     }
 });
 
-const params = new URLSearchParams(window.location.search);
-const keyword = params.get("search");
-
-if (keyword) {
-    const filtered = allPokemonData.filter(pokemon => 
-        pokemon.name.toLowerCase().includes(keyword));
-    displayPokemon(filtered);
-    buttons.forEach(button => {
-            button.classList.remove('select-button');
-    });
+// モーダルウィンドウ表示
+function showPokemonModal(name, description, types, listPaddedNumber) {
+    const modal = document.getElementById('pokemonModal');
+    const japaneseTypes = types.map(t => typeMapping[t] || t);
+    document.getElementById('modalImage').src = `./img/${listPaddedNumber}gif.png`;
+    document.getElementById('modalNo').textContent = '図鑑番号：No.' + listPaddedNumber;
+    document.getElementById('modalTitle').textContent = name;
+    document.getElementById('modalDescription').textContent = description;
+    document.getElementById('modalTypes').textContent = 'タイプ：' + japaneseTypes.join('・');
+    modal.style.display = 'flex';
 }
 
-// 初期ロード
-loadAllPokemon();
+// 閉じるボタン
+document.getElementById('closeModal').addEventListener('click', () => {
+    document.getElementById('pokemonModal').style.display = 'none';
+});
+
+// pokeAPIから情報取得
+async function fetchPokemonDescription(id) {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    const data = await res.json();
+    const entry = data.flavor_text_entries.find(e => e.language.name === 'ja');
+    return entry ? entry.flavor_text.replace(/\\n|\\f/g, ' ') : '説明が見つかりません';
+}
