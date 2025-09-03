@@ -204,10 +204,10 @@ function renderItem(todo) {
 
     // タスクテキスト
     const span = document.createElement("span");
-    span.textContent = "";
     span.className = "flex-1 text-[15px] " + (todo.done ? "line-through text-gray-400" : "");
     span.title = "ダブルクリックで編集";
     // TODO: タスクの内容を設定
+    span.textContent = todo.text;
     // TODO: ダブルクリックで edit を呼び出し
 
     // 個別削除
