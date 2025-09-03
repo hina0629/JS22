@@ -40,6 +40,7 @@ const store = {
         const todos = json ? JSON.parse(json) : [];
         return todos;
     },
+    // 以下は今回使わない
     /**
      * 削除
      */
@@ -226,6 +227,9 @@ function renderItem(todo) {
     deleteButton.className = "ml-2 px-2 py-1 text-sm rounded-md text-white bg-red-600";
     deleteButton.textContent = "削除";
     // TODO: クリックで remove を呼び出し
+    deleteButton.onclick = () => {
+        remove(todo.id);
+    }
 
     // アイテムに要素を追加
     li.append(checkBox, span, deleteButton);
