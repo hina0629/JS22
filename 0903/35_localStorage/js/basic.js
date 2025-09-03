@@ -55,6 +55,7 @@ document.getElementById('loadList').addEventListener('click', () => {
 
 document.getElementById('removeList').addEventListener('click', () => {
     // TODO: Local Storage からキーを指定して削除
+    localStorage.removeItem('items');
 
     output.textContent = '削除しました。';
 });
