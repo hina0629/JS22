@@ -316,9 +316,9 @@ function edit(todo, spanEl) {
     // イベント
     input.addEventListener("keydown", (e) => {
         // TODO: Enter キーで確定
-
+        if (e.key === "Enter") commit();
         // TODO: Escape キーでキャンセル、
-
+        if (e.key === "Escape") cancel();
     });
     // フォーカスが外れたら確定
     input.addEventListener("blur", commit);
