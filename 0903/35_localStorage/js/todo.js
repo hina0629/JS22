@@ -213,6 +213,7 @@ function renderItem(todo) {
     checkBox.checked = todo.done;
 
     // TODO: チェックボックスの change イベントで toggleDone を呼び出し
+    checkBox.onchange = (e) => toggleDone(todo.id, e.target.checked);
 
     // タスクテキスト
     const span = document.createElement("span");
