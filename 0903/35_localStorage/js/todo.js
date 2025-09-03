@@ -225,6 +225,7 @@ function renderItem(todo) {
     span.textContent = todo.text;
 
     // TODO: ダブルクリックで edit を呼び出し
+    span.ondblclick = () => edit(todo, span);
 
     // 個別削除
     const deleteButton = document.createElement("button");
