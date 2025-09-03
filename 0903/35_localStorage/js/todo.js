@@ -70,7 +70,7 @@ const add = (e) => {
     // 完了状態(初期値は false)
     const done = false;
     // TODO: タスクに追加 { id, text, done, createdAt }
-    todos.push({ id, text, done, createdAt});
+    todos.push({ id, text, done, createdAt });
 
     // 入力フィールドをクリア
     $new.value = "";
