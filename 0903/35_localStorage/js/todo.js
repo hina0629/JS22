@@ -3,13 +3,13 @@ let filter = "all";
 let filterStyles = ['bg-sky-600', 'text-white', 'hover:bg-gray-50'];
 
 // TODO: 初期データ
-// let todos = [];
+let todos = [];
 // テスト用データ
-let todos = [
-    { id: "1", text: "買い物に行く", done: false, createdAt: 1700000000000 },
-    { id: "2", text: "洗濯をする", done: true, createdAt: 1700000001000 },
-    { id: "3", text: "掃除をする", done: false, createdAt: 1700000002000 },
-];
+// let todos = [
+//     { id: "1", text: "買い物に行く", done: false, createdAt: 1700000000000 },
+//     { id: "2", text: "洗濯をする", done: true, createdAt: 1700000001000 },
+//     { id: "3", text: "掃除をする", done: false, createdAt: 1700000002000 },
+// ];
 
 // -------- DOM要素 --------
 const $ = (id) => document.getElementById(id);
