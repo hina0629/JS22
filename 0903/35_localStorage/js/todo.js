@@ -164,6 +164,8 @@ function save() {
  */
 function filtered() {
     // TODO: active, done フィルタリング
+    if (filter === "active") return todos.filter(todo => !todo.done);
+    if (filter === "done") return todos.filter(todo => todo.done);
     // todos.filter(...)
     return todos;
 }
@@ -221,6 +223,7 @@ function renderItem(todo) {
     span.title = "ダブルクリックで編集";
     // TODO: タスクの内容を設定
     span.textContent = todo.text;
+
     // TODO: ダブルクリックで edit を呼び出し
 
     // 個別削除
