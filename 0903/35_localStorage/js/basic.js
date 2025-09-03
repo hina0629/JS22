@@ -24,10 +24,11 @@ document.getElementById('remove').addEventListener('click', () => {
 });
 
 document.getElementById('saveList').addEventListener('click', () => {
-    // JSONに変換
+    // JSオブジェクトをJSONに変換
     const json = JSON.stringify(todos);
 
     // TODO: Local Storage にキーを指定して保存
+    localStorage.setItem('items', json);
 
     // オブジェクトをテキストに変換
     const text = todos.map(todo => `${todo.id}: ${todo.text} (${todo.done})`).join('\n');
