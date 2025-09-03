@@ -52,6 +52,7 @@ const store = {
      */
     clear() {
         // TODO: すべて削除
+        localStorage.clear();
     }
 };
 
