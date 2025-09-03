@@ -37,9 +37,16 @@ document.getElementById('saveList').addEventListener('click', () => {
 
 document.getElementById('loadList').addEventListener('click', () => {
     // TODO: Local Storage からーを指定して取得
+    const json = localStorage.getItem('items');
 
     // JSONをオブジェクトに変換
     const data = json ? JSON.parse(json) : [];
+    // ↑ if分で書くとこうなる
+    // if (json) {
+    //     data = JSON.parse(json);
+    // } else {
+    //     data = [];
+    // }
 
     // オブジェクトをテキストに変換
     const text = data.map(value => `${value.id}: ${value.text} (${value.done})`).join('\n');
