@@ -143,6 +143,7 @@ function clearDone() {
 function clearAll() {
     if (!confirm("すべてのタスクを削除します。よろしいですか？")) return;
     // TODO: すべてのタスクを削除
+    todos = [];
 
     // LocalStorageに保存
     save();
