@@ -5,6 +5,7 @@ const KEY = "account_name";
 showCookies();
 
 document.getElementById("testBtn").addEventListener("click", () => {
+    // JSONでは保存しないように
     // cookie 保存
     document.cookie = "message=とりあえず保存！";
 });
