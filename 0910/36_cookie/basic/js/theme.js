@@ -33,7 +33,7 @@ function applyTheme(value) {
 // テーマ切り替え
 function toggleTheme() {
     // TODO: 現在の状態を反転: theme = dark / light
-    const next = "";
+    const next = (theme === "dark") ? "light" : "dark";
     // Themeを適用
     applyTheme(next);
 }
