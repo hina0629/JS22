@@ -22,6 +22,7 @@ function applyTheme(value) {
     if (icon) icon.textContent = theme === "dark" ? "🌙" : "🌞";
 
     // TODO: Cookieに保存: THEME_KEY, theme
+    setCookie(THEME_KEY, theme);
 
     // ボタンを更新: UI上だけでなくアクセシビリティ的にも明示するための属性
     document.getElementById("themeBtn")?.setAttribute("aria-pressed", String(theme === "dark"));
