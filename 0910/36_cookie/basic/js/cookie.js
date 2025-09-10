@@ -18,6 +18,7 @@ function setCookie(key, value, mode, expires, maxAge) {
     // max-ageの設定
     if (mode === "max-age" && maxAge) {
         // TODO: max-age  を cookieStr に連結 ※「;」で区切る
+        cookieStr += `; max-age=${maxAge}`;
     }
 
     // TODO: Cookieの設定: document.cookie 
