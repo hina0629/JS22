@@ -93,11 +93,15 @@ async function getActors() {
         // ヘッダー: accept: application/json
         // x-api-key: API_KEY 
         const options = {
-
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                'x-api-key': API_KEY
+            }
         };
 
         // TODO: 声優一覧APIのURL
-        const uri = '';
+        const uri = 'https://api.nijivoice.com/api/platform/v1/voice-actors';
         // Fetch API で取得
         const response = await fetch(uri, options);
         // オブジェクトに変換
