@@ -345,14 +345,14 @@ function setupInfiniteScroll(callback, options = { rootMargin: "200px" }) {
     document.body.appendChild(sentinel);
 
     // TODO: 無限スクロール用のオブザーバーを作成
-    // const observer = new IntersectionObserver((entries) => {
-    //     if (entries[0].isIntersecting) {
-    //         callback();
-    //     }
-    // }, options);
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            callback();
+        }
+    }, options);
 
-    // observer.observe(sentinel);
-    // return observer;
+    observer.observe(sentinel);
+    return observer;
 }
 
 // 初期ロード
