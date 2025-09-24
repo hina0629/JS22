@@ -14,7 +14,7 @@ document.getElementById("play").addEventListener("click", async () => {
         const voice_id = "EXAVITQu4vr4xnSDxMaL"; 
         const model_id = "eleven_multilingual_v2";
          // TODO: エンドポイントURLを設定
-        const endpoint = `https://api.elevenlabs.io/v1/text-to-speech/${voice_id}v`;
+        const endpoint = `https://api.elevenlabs.io/v1/text-to-speech/${voice_id}`;
 
         const response = await fetch(
             endpoint,
@@ -38,7 +38,7 @@ document.getElementById("play").addEventListener("click", async () => {
         }
 
         // TODO: レスポンスの形式を確認し、音声データの取得方法を修正: arrayBuffer()
-        const audioData = await response.arrayBuffer()
+        const audioData = await response.arrayBuffer();
         // TODO: 音声データのMIMEタイプを確認し、適切に設定: Blob で type: "audio/mpeg"
         const blob = new Blob([audioData], { type: "audio/mpeg" });
         // TODO: URL.createObjectURL() の引数を blob に修正
