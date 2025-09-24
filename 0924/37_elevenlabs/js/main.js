@@ -17,13 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     playBtn.addEventListener("click", async () => {
         // ブラウザからテキスト取得
-        const text = "";
+        const text = document.getElementById("textInput").value.trim();
         // ブラウザから model_id 取得
-        const model_id = "";
+        const model_id = document.getElementById("modelSelect").value;
         // voice_id 取得
-        const voice_id = "";
+        const voice_id = document.getElementById("voiceSelect").value;
         // 音声フォーマット取得
-        const format = "";
+        const format = document.getElementById("formatSelect").value;
+
+        // console.log(text)
+        // console.log(model_id)
+        // console.log(voice_id)
+        // console.log(format)
 
         if (!text) {
             alert("テキストを入力してください");
@@ -45,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // - Body: JSON形式で"text", "model_id", "voice_settings", "output_format"を含む
 
             // TODO: エンドポイントURLを設定
-            const endpoint = ``;
+            const endpoint = `https://api.elevenlabs.io/v1/text-to-speech/${voice_id}/stream`;
 
             const response = await fetch(endpoint, {
                 method: "POST",
@@ -55,9 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 body: JSON.stringify({
                     // TODO: text
+                    text,
                     // TODO: model_id
+                    model_id,
                     // TODO: voice_settings: { stability, similarity_boost }
+                    voice_settings: { stability: 0.5, similarity_boost: 0.75 },
                     // TODO: output_format
+                    output_format: format,
                 })
             });
 
@@ -84,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             // TODO: ダウンロードボタン有効化
+            downloadBtn.href = url;
 
             // 拡張子判定
             const extension = mimeType.includes("mpeg")
