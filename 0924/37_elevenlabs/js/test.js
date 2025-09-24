@@ -14,7 +14,7 @@ document.getElementById("play").addEventListener("click", async () => {
         const voice_id = "EXAVITQu4vr4xnSDxMaL"; 
         const model_id = "eleven_multilingual_v2";
          // TODO: エンドポイントURLを設定
-        const endpoint = ``;
+        const endpoint = `https://api.elevenlabs.io/v1/text-to-speech/${voice_id}v`;
 
         const response = await fetch(
             endpoint,
@@ -22,11 +22,13 @@ document.getElementById("play").addEventListener("click", async () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "xi-api-key": "YOUR_ELEVENLABS_API_KEY",
+                    // TODO: APIキーを設定
+                    "xi-api-key": CONFIG.API_KEY,
                 },
                 body: JSON.stringify({
                     text,
                     // TODO: ここに model_id を設定
+                    model_id,
                 }),
             }
         );
@@ -36,14 +38,15 @@ document.getElementById("play").addEventListener("click", async () => {
         }
 
         // TODO: レスポンスの形式を確認し、音声データの取得方法を修正: arrayBuffer()
-        const audioData = {};
+        const audioData = await response.arrayBuffer()
         // TODO: 音声データのMIMEタイプを確認し、適切に設定: Blob で type: "audio/mpeg"
-        const blob = {};
+        const blob = new Blob([audioData], { type: "audio/mpeg" });
         // TODO: URL.createObjectURL() の引数を blob に修正
         const url = URL.createObjectURL(blob);
         // TODO: url から Audioオブジェクトの作成
-        const audio = {};
+        const audio = new Audio(url);
         // TODO: オーディオの再生
+        audio.play();
 
         status.textContent = "✅ 再生中...";
     } catch (err) {
